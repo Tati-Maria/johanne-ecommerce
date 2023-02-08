@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css';
-import { ToastContainer } from 'react-toastify';
+import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { 
   RouterProvider, 
@@ -43,9 +43,9 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <ToastContainer limit={1} />
     <Provider store={store}>
     <RouterProvider router={router}>
-      <ToastContainer limit={1} />
       <App />
     </RouterProvider>
     </Provider>

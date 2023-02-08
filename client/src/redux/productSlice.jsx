@@ -23,7 +23,7 @@ import longsleeve from "../assets/products/longsleeve-cover2.jpg";
 import longsleeve2 from "../assets/products/longsleeve-cover.jpg";
 import gray from "../assets/products/gray-bathsuit.2webp.webp";
 import gray2 from "../assets/products/gray-bathsuit.webp"
-import {toast} from "react-toastify"
+import {Flip, toast} from "react-toastify"
 
 const initialState = {
     products: [
@@ -37,7 +37,8 @@ const initialState = {
             isNew: false,
             category: "bikini",
             featured: false,
-            trending: true
+            trending: true,
+            size: ['S', 'M', 'L']
         },
         {
             id: 2,
@@ -49,7 +50,8 @@ const initialState = {
             isNew: true,
             category: "bikini",
             featured: true,
-            trending: false
+            trending: false,
+            size: ['S', 'M', 'L']
         },
         {
             id: 3,
@@ -61,7 +63,8 @@ const initialState = {
             isNew: true,
             category: "accessories",
             featured: true,
-            trending: false
+            trending: false,
+            size: ['U']
         },
         {
             id: 4,
@@ -73,7 +76,8 @@ const initialState = {
             isNew: false,
             category: "bikini",
             featured: false,
-            trending: true
+            trending: true,
+            size: ['S', 'M', 'L']
         },
         {
             id: 5,
@@ -85,7 +89,8 @@ const initialState = {
             isNew: false,
             category: "bikini",
             featured: false,
-            trending: true
+            trending: true,
+            size: ['S', 'M', 'L']
         },
         {
             id: 6,
@@ -97,7 +102,8 @@ const initialState = {
             isNew: false,
             category: "accessories",
             featured: false,
-            trending: true
+            trending: true,
+            size: ['S', 'M',]
         },
         {
             id: 7,
@@ -109,7 +115,8 @@ const initialState = {
             isNew: true,
             category: "accessories",
             featured: true,
-            trending: false
+            trending: false,
+            size: ['S', 'M', 'L']
         },
         {
             id: 8,
@@ -121,7 +128,8 @@ const initialState = {
             isNew: false,
             category: "bikini",
             featured: false,
-            trending: true
+            trending: true,
+            size: ['S', 'M', 'L']
         },
         {
             id: 9,
@@ -133,7 +141,8 @@ const initialState = {
             isNew: false,
             category: "accessories",
             featured: false,
-            trending: true
+            trending: true,
+            size: ['S', 'M', 'L']
         },
         {
             id: 10,
@@ -145,7 +154,8 @@ const initialState = {
             isNew: false,
             category: "bikini",
             featured: false,
-            trending: true
+            trending: true,
+            size: ['S', 'M', 'L']
         },
         {
             id: 11,
@@ -157,7 +167,8 @@ const initialState = {
             isNew: false,
             category: "accessories",
             featured: false,
-            trending: false
+            trending: false,
+            size: ['M', 'L']
         },
         {
             id: 12,
@@ -169,7 +180,8 @@ const initialState = {
             isNew: false,
             category: "bikini",
             featured: false,
-            trending: false
+            trending: false,
+            size: ['S', 'M']
         },
     ],
     favorites: []
@@ -182,16 +194,19 @@ export const productSlice = createSlice({
     reducers: {
         addToFavorites: (state, action) => {
             state.favorites.push(action.payload);
-            toast.TYPE.SUCCESS("Item added to favorites ❤️");
+            toast.success("Item added to favorites ❤️", {
+                position: toast.POSITION.TOP_RIGHT,
+                autoClose: 1000,
+                theme: "dark",
+            });
 
         },
         removeFromFavorites: (state, action) => {
             state.favorites.filter(product => product.id !== action.payload);
-            toast.update("Item successfully remove", {
+            toast.success("Item successfully remove", {
                 position: toast.POSITION.TOP_RIGHT,
-                autoClose: 1500,
-                theme: "light",
-                transition: "flip"
+                autoClose: 1000,
+                theme: "dark"
             })
         }
     }

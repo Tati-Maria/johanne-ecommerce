@@ -17,19 +17,15 @@ export const cartSlice = createSlice({
             //chech if the product is already in cart to be updated
             if(productItem) {
                 productItem += 1;
-                toast.success("Added to cart successfully", {
+                toast.success("Item updated", {
                     position: toast.POSITION.TOP_RIGHT,
                     autoClose: 1000,
-                    theme: "light",
-                    transition: "flip"
                 })
             } else {
                 state.cartItems = [item, ...state.cartItems];
-                toast.update("Item updated", {
+                toast.success("Added to cart successfully", {
                     position: toast.POSITION.TOP_RIGHT,
-                    autoClose: 1500,
-                    theme: "light",
-                    transition: "flip"
+                    autoClose: 1000,
                 })
             }
         },
