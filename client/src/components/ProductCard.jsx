@@ -38,6 +38,7 @@ const ProductCard = ({filteredProducts}) => {
         onClick={() => {
           if(!toggleFavorites[item.id]) {
             dispatch(addToFavorites({
+              id: item.id,
               title: item.name,
               price: item.price,
               image: item.img

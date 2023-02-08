@@ -23,7 +23,7 @@ import longsleeve from "../assets/products/longsleeve-cover2.jpg";
 import longsleeve2 from "../assets/products/longsleeve-cover.jpg";
 import gray from "../assets/products/gray-bathsuit.2webp.webp";
 import gray2 from "../assets/products/gray-bathsuit.webp"
-import {Flip, toast} from "react-toastify"
+import {toast} from "react-toastify"
 
 const initialState = {
     products: [
@@ -202,12 +202,10 @@ export const productSlice = createSlice({
 
         },
         removeFromFavorites: (state, action) => {
-            state.favorites.filter(product => product.id !== action.payload);
-            toast.success("Item successfully remove", {
-                position: toast.POSITION.TOP_RIGHT,
-                autoClose: 1000,
-                theme: "dark"
-            })
+            return {
+                ...state,
+                favorites: state.favorites.filter(product => product.id !== action.payload)
+            };
         }
     }
 });

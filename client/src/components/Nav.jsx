@@ -6,13 +6,18 @@ import Tooltip from '@mui/material/Tooltip';
 import {BsCartFill,BsPerson,BsSearch, BsSuitHeartFill} from "react-icons/bs";
 import {RxHamburgerMenu} from "react-icons/rx";
 import Layout from "../layout/Layout";
-import Cart from "./Cart";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import CartModal from "./CartModal";
+
+
 
 const Nav = () => {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     const cartItems = useSelector(state => state.cart.cartItems);
+    const handleClose = () => setOpen(false);
+    const handleOpen = () => setOpen(true);
+
 
     //MUI
     const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -24,8 +29,10 @@ const Nav = () => {
         },
       }));
 
+      const dispatch = useDispatch()
+
     return (
-        <nav className="text-white bg-gray-700">
+        <nav className="text-white bg-gray-700 relative">
             <Layout>
                 <div className="flex items-center justify-between">
                     <NavLink to="/">
@@ -80,7 +87,7 @@ const Nav = () => {
                         </IconButton>
                     </div>
                     <div className="flex  items-center gap-4 lg:hidden">
-                    <IconButton aria-label="cart">
+                    <IconButton aria-label="cart" onClick={handleOpen}>
                             <StyledBadge badgeContent={`${cartItems.length}`} color="primary">
                                 <BsCartFill size={20} color="white"/>
                             </StyledBadge>
@@ -90,6 +97,7 @@ const Nav = () => {
                     </button>
                     </div>
                 </div>
+                <CartModal />
             </Layout>
         </nav>
     )

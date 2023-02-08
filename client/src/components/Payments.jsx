@@ -9,7 +9,7 @@ const Payments = () => {
     return (
         <section>
         <Layout>
-            <div className='flex items-center justify-evenly'>
+            <div className='flex flex-col items-center justify-evenly md:flex-row gap-4 md:gap-0'>
                 {/*Left */}
                 <div className='flex items-center gap-6'>
                     <div className='bg-blue-500 p-1.5 text-white rounded-full'>

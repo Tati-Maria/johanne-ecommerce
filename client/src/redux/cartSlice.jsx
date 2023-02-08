@@ -12,54 +12,51 @@ export const cartSlice = createSlice({
     reducers: {
         addToCart:(state, action) => {
             const item = action.payload;
-            let productItem = state.cartItems.find(product => product.id === item.id);
+            let productItem = state.cartItems.find(prod => prod.id === item.id);
 
-            //chech if the product is already in cart to be updated
+            //check if the have been added to cart
             if(productItem) {
-                productItem += 1;
+                productItem.quantity += 1;
                 toast.success("Item updated", {
                     position: toast.POSITION.TOP_RIGHT,
-                    autoClose: 1000,
-                })
+                    autoClose: 1000
+                });
             } else {
-                state.cartItems = [item, ...state.cartItems];
+                state.cartItems = [{...item, quantity: 1}, ...state.cartItems];
                 toast.success("Added to cart successfully", {
                     position: toast.POSITION.TOP_RIGHT,
-                    autoClose: 1000,
+                    autoClose: 1000
                 })
             }
         },
         incrementQty: (state, action) => {
             const item = action.payload;
-            let productItem = state.cartItems.find(product => 
-                product.id === item.id
-            );
-
+            let productItem = state.cartItems.find(prod => prod.id === item.id);
             if(productItem) {
-                productItem.quantity += 1
-            }
+                productItem.quantity += 1;
+            } 
         },
         decrementQty: (state, action) => {
             const item = action.payload;
-            let productItem = state.cartItems.find(product => 
-                product.id === item.id
-            );
-
+            let productItem = state.cartItems.find(prod => prod.id === item.id);
             if(productItem) {
-                productItem.quantity -= 1;
-                //if the number is negative the item must be removed
-            } else if(productItem.quantity === 0) {
-                state.cartItems = state.cartItems.filter(product => product.id !== item.id);
+                if(productItem.quantity > 1) {
+                    productItem.quantity -= 1
+                } else {
+                    toast.warning("Quantity can not be negative", {
+                        position: toast.POSITION.TOP_RIGHT,
+                        autoClose: 1000,
+                        
+                    });
+                }
             }
         },
         removeFromCart: (state, action) => {
             const item = action.payload;
-            state.cartItems = state.cartItems.filter(product => product.id !== item.id);
-            toast.success("Item successfuly removed", {
+            state.cartItems = state.cartItems.filter(prod => prod.id !== item.id);
+            toast.success('Item successfully removed', {
                 position: toast.POSITION.TOP_RIGHT,
-                autoClose:1500,
-                transition: "flip",
-                theme: "light"
+                autoClose: 1000
             })
         },
         resetCart: (state) => {
