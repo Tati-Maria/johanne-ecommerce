@@ -7,7 +7,7 @@ import {BsCartFill,BsPerson,BsSearch, BsSuitHeartFill} from "react-icons/bs";
 import {RxHamburgerMenu} from "react-icons/rx";
 import Layout from "../layout/Layout";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import CartModal from "./CartModal";
 
 
@@ -15,8 +15,6 @@ import CartModal from "./CartModal";
 const Nav = () => {
     const [open, setOpen] = useState(false);
     const cartItems = useSelector(state => state.cart.cartItems);
-    const handleClose = () => setOpen(false);
-    const handleOpen = () => setOpen(true);
 
 
     //MUI
@@ -29,7 +27,6 @@ const Nav = () => {
         },
       }));
 
-      const dispatch = useDispatch()
 
     return (
         <nav className="text-white bg-gray-700 relative">
@@ -80,24 +77,28 @@ const Nav = () => {
                             </Tooltip>
                         </NavLink>
                         <BsPerson size={20} />
-                        <IconButton aria-label="cart">
-                            <StyledBadge badgeContent={`${cartItems.length}`} color="primary">
-                                <BsCartFill size={20} color="white"/>
-                            </StyledBadge>
-                        </IconButton>
+                        <div onClick={() => setOpen(!open)}>
+                            <IconButton aria-label="cart">
+                                <StyledBadge badgeContent={`${cartItems.length}`} color="primary">
+                                    <BsCartFill size={20} color="white"/>
+                                </StyledBadge>
+                            </IconButton>
+                        </div>
                     </div>
                     <div className="flex  items-center gap-4 lg:hidden">
-                    <IconButton aria-label="cart" onClick={handleOpen}>
-                            <StyledBadge badgeContent={`${cartItems.length}`} color="primary">
-                                <BsCartFill size={20} color="white"/>
-                            </StyledBadge>
-                        </IconButton>
+                        <div onClick={() => setOpen(!open)}>
+                            <IconButton aria-label="cart">
+                                <StyledBadge badgeContent={`${cartItems.length}`} color="primary">
+                                    <BsCartFill size={20} color="white"/>
+                                </StyledBadge>
+                            </IconButton>
+                        </div>
                     <button>
                         <RxHamburgerMenu size={30} />
                     </button>
                     </div>
                 </div>
-                <CartModal />
+                {open && (<CartModal />)}
             </Layout>
         </nav>
     )

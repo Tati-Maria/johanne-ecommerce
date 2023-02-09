@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -17,13 +17,22 @@ const Product = () => {
   const {id} = useParams();
   const products = useSelector(state => state.products.products);
   const item = products.find(prod => prod.id === +id);
-  const [selectedImg, setSelectedImg] = useState(item.img)
-  const [selectedSize, setSelectedSize] = useState();
+  const [selectedImg, setSelectedImg] = useState(item ? item.img : null)
+  const [selectedSize, setSelectedSize] = useState(null);
+  
+  useEffect(() => {
+    if(item) {
+      setSelectedImg(item.img);
+      setSelectedSize(null)
+    }
+  }, [id, item])
+  
   if(!id) {
-    return null
+    return null;
   }
 
   const sizes = item.size;
+  
   const handleSizeChoice = (size) => {
     setSelectedSize(size)
   }
@@ -40,12 +49,12 @@ const Product = () => {
             {/*Side Images */}
             <div className='hidden lg:flex flex-col gap-4'>
               <img
-              className='h-[150px] w-[150px] object-cover float-left' 
+              className='h-[150px] w-[150px] object-cover float-left cursor-pointer' 
               src={item.img} 
               alt={item.name} 
               onClick={() => setSelectedImg(item.img)} />
               <img
-              className='h-[150px] w-[150px] object-cover float-left' 
+              className='h-[150px] w-[150px] object-cover float-left cursor-pointer' 
               src={item.img2} 
               alt={item.name} 
               onClick={() => setSelectedImg(item.img2)} />
