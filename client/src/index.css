@@ -11,3 +11,10 @@
     background-color: #000;
     border-radius: 10px;
 }
+
+
+
+nav a:focus,
+nav a:hover{
+    @apply text-blue-600 duration-300;
+}

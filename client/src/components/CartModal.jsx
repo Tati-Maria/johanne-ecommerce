@@ -8,10 +8,18 @@ const CartModal = () => {
     const cartItems = useSelector(state => state.cart.cartItems);
     const dispatch = useDispatch();
 
+    const totalPrice = () => {
+        let total = 0;
+        cartItems.forEach(
+            item => total += item.quantity * item.price
+        );
+
+        return total.toFixed(2);
+    };
     
 
     return (
-        <div className="text-white z-10 absolute right-2 top-20 h-[300px] overflow-y-scroll bg-slate-600 p-5 flex flex-col justify-between" id="cart">
+        <div className="text-white z-10 absolute top-20 h-96 sm:right-2 overflow-y-scroll bg-slate-500 p-5 flex flex-col justify-between shadow" id="cart">
             <h3 className="font-bold text-xl pb-6">Your Cart Items</h3>
             {cartItems.length === 0 && <h4>Empty!</h4>}
             <div className="space-y-10 my-4">
@@ -41,6 +49,7 @@ const CartModal = () => {
                             <button onClick={() => dispatch(removeFromCart(item))}>
                                 <FaTimes size={20} color="red" />
                             </button>
+                            <p className="flex flex-col">Subtotal: <span>£{item.price * item.quantity}</span></p>
                         <div>
                         </div>
                     </div>
@@ -59,6 +68,7 @@ const CartModal = () => {
                     >
                         Pay with Stripe
                     </button>
+                    <p>Total: £<span>{cartItems.reduce((acc, item) => acc += item.price * item.quantity, 0)}</span></p>
                 </div>
             }
             
