@@ -49,12 +49,12 @@ const Product = () => {
             {/*Side Images */}
             <div className='hidden lg:flex flex-col gap-4'>
               <img
-              className='h-[150px] w-[150px] object-cover float-left cursor-pointer' 
+              className='h-[150px] w-[500px] object-cover float-left cursor-pointer' 
               src={item.img} 
               alt={item.name} 
               onClick={() => setSelectedImg(item.img)} />
               <img
-              className='h-[150px] w-[150px] object-cover float-left cursor-pointer' 
+              className='h-[150px] w-[500px] object-cover float-left cursor-pointer' 
               src={item.img2} 
               alt={item.name} 
               onClick={() => setSelectedImg(item.img2)} />
