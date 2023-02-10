@@ -68,7 +68,7 @@ const CartModal = () => {
                     >
                         Pay with Stripe
                     </button>
-                    <p>Total: £<span>{cartItems.reduce((acc, item) => acc += item.price * item.quantity, 0).toFixed(2)}</span></p>
+                    <p>Total: £ <span className="font-bold">{cartItems.reduce((acc, item) => acc += item.price * item.quantity, 0).toFixed(2)}</span></p>
                 </div>
             }
             

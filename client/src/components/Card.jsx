@@ -10,7 +10,7 @@ const Card = ({id, title, price, image}) => {
   return (
     <div className='flex flex-col gap-4 relative'>
         <Link to={`/products/${id}`}>
-        <img src={image} alt={title} className="object-cover float-left w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-md" />
+        <img src={image} alt={title} className="object-cover float-left w-[400px] h-[400px] rounded-md" />
         </Link>
         <div className='flex items-center justify-between px-1'>
             <h4>{title}</h4>

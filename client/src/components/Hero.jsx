@@ -4,7 +4,7 @@ import Layout from '../layout/Layout';
 
 const Hero = () => {
   return (
-    <section className='flex flex-col justify-center mt-28 text-white'>
+    <section className='flex flex-col justify-center mt-36 md:mt-28 text-white'>
         <Layout>
         <div className='flex items-center flex-col space-y-10'>
             <h1 className='text-center font-bold capitalize text-4xl md:text-5xl lg:text-6xl'>
