@@ -19,16 +19,16 @@ const CartModal = () => {
     
 
     return (
-        <div className="text-white z-10 absolute top-20 h-96 sm:right-2 overflow-y-scroll bg-slate-500 p-5 flex flex-col justify-between shadow" id="cart">
+        <div className="text-white z-10 absolute inset-0 top-20 w-full h-96 overflow-y-scroll bg-slate-500 p-5 flex flex-col justify-between shadow" id="cart">
             <h3 className="font-bold text-xl pb-6">Your Cart Items</h3>
             {cartItems.length === 0 && <h4>Empty!</h4>}
             <div className="space-y-10 my-4">
                 {cartItems.map(item => (
-                    <div key={item.id} className="flex items-center gap-10">
+                    <div key={item.id} className="flex flex-row items-center justify-between border-b border-black pb-4">
                         <div>
                             <img src={item.img} alt={item.name} width={100} />
                         </div>
-                        <div className="space-y-2">
+                        <div className="space-y-2 text-center">
                             <h4>{item.name}</h4>
                             <p>£ {item.price}</p>
                             <p>{item.size}</p>
@@ -49,7 +49,7 @@ const CartModal = () => {
                             <button onClick={() => dispatch(removeFromCart(item))}>
                                 <FaTimes size={20} color="red" />
                             </button>
-                            <p className="flex flex-col">Subtotal: <span>£{item.price * item.quantity}</span></p>
+                            <p className="hidden md:flex flex-col">Subtotal: <span>£{(item.price * item.quantity).toFixed(2)}</span></p>
                         <div>
                         </div>
                     </div>
@@ -64,11 +64,11 @@ const CartModal = () => {
                         Reset Cart
                     </button>
                     <button
-                    className="bg-purple-600 px-4 py-1 hover:text-purple-600 hover:bg-white duration-300"
+                    className="bg-purple-600 px-10 py-1 w-full lg:w-max lg:mx-auto hover:text-purple-600 hover:bg-white duration-300"
                     >
                         Pay with Stripe
                     </button>
-                    <p>Total: £<span>{cartItems.reduce((acc, item) => acc += item.price * item.quantity, 0)}</span></p>
+                    <p>Total: £<span>{cartItems.reduce((acc, item) => acc += item.price * item.quantity, 0).toFixed(2)}</span></p>
                 </div>
             }
             
