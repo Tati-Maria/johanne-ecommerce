@@ -16,9 +16,10 @@ import HomeLayout from './layout/HomeLayout';
 import About from './pages/About';
 import Products from './pages/Products';
 import Product from './pages/Product';
-import NotFound from './pages/NotFound';
+import Cancel from './pages/Cancel';
 import ErrorElement from './pages/404';
 import Home from './pages/Home';
+import Success from "./pages/Success"
 //redux store
 import { store } from './redux/store';
 import Favorites from './pages/Favorites';
@@ -32,10 +33,10 @@ const router = createBrowserRouter(
       <Route path='about' element={<About />} />
       <Route path='contact' element={<Contact />} />
       <Route path='favorites' element={<Favorites/>} />
-      <Route path='products' element={<Products />}>
-        <Route path='*' errorElement={<NotFound />} />
-      </Route>
+      <Route path='products' element={<Products />} />
       <Route path='products/:id' element={<Product />} />
+      <Route path='cancel' element={<Cancel />} />
+      <Route path='success' element={<Success />} />
       <Route path='*' element={<ErrorElement />} />
     </Route>
   )

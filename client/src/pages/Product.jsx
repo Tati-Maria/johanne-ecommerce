@@ -16,7 +16,7 @@ import { toast } from 'react-toastify';
 const Product = () => {
   const {id} = useParams();
   const products = useSelector(state => state.products.products);
-  const item = products.find(prod => prod.id === +id);
+  const item = products.find(prod => prod.id === id);
   const [selectedImg, setSelectedImg] = useState(item ? item.img : null)
   const [selectedSize, setSelectedSize] = useState(null);
   

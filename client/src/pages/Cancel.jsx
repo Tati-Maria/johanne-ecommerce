@@ -1,18 +1,17 @@
 import React from 'react'
-import {BsEmojiLaughing} from "react-icons/bs"
 import Layout from '../layout/Layout';
+import {BsEmojiFrown} from "react-icons/bs"
 
-const Success = () => {
+const Cancel = () => {
   return (
     <Layout>
       <div className='min-h-screen flex items-center justify-center'>
         <div className='text-center space-y-5'>
         <div>
-          <BsEmojiLaughing size={150} className="inline-block text-green-500"/>
+          <BsEmojiFrown size={150} className="inline-block"/>
         </div>
         <div>
-        <h2 className='text-4xl text-green-500'>Thanks for shopping with us!</h2>
-        <p className='text-xl'>Your order was placed successfully.</p>
+        <h2 className='text-4xl'>Your order was cancelled!</h2>
         <small className='text-gray-700'>*this is not a real e-commerce store. Just for test purposes only!</small>
         </div>
         </div>
@@ -21,4 +20,4 @@ const Success = () => {
   )
 }
 
-export default Success;
+export default Cancel;

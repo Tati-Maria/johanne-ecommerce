@@ -28,7 +28,7 @@ import {toast} from "react-toastify"
 const initialState = {
     products: [
         {
-            id: 1,
+            id: "price_1MZzY6FQlqGn9YIntqa7kPjf",
             name: "Pink Set Cali",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 20.99,
@@ -41,7 +41,7 @@ const initialState = {
             size: ['S', 'M', 'L']
         },
         {
-            id: 2,
+            id: "price_1MZzZQFQlqGn9YIn8VzZOvzC",
             name: "Stylish Bikini Set",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 45.99,
@@ -54,7 +54,7 @@ const initialState = {
             size: ['S', 'M', 'L']
         },
         {
-            id: 3,
+            id: "price_1MZza3FQlqGn9YIn9WwKRvbS",
             name: "Beach Bag",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 35.99,
@@ -67,7 +67,7 @@ const initialState = {
             size: ['U']
         },
         {
-            id: 4,
+            id: "price_1MZzaTFQlqGn9YInYuxAAX9R",
             name: "Floral Boho",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 35.99,
@@ -80,7 +80,7 @@ const initialState = {
             size: ['S', 'M', 'L']
         },
         {
-            id: 5,
+            id: "price_1MZzaqFQlqGn9YInTg1ZzXiy",
             name: "Red Set",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 18.99,
@@ -93,7 +93,7 @@ const initialState = {
             size: ['S', 'M', 'L']
         },
         {
-            id: 6,
+            id: "price_1MZzbEFQlqGn9YInZTUpzVMN",
             name: "Cover Up Dress",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 17.99,
@@ -106,7 +106,7 @@ const initialState = {
             size: ['S', 'M',]
         },
         {
-            id: 7,
+            id: "price_1MZzbhFQlqGn9YIn0yBSeciQ",
             name: "Beach Pants",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 59.99,
@@ -119,7 +119,7 @@ const initialState = {
             size: ['S', 'M', 'L']
         },
         {
-            id: 8,
+            id: "price_1MZzc8FQlqGn9YInJtWqv2rZ",
             name: "Blue Set Cali",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 29.99,
@@ -132,7 +132,7 @@ const initialState = {
             size: ['S', 'M', 'L']
         },
         {
-            id: 9,
+            id: "price_1MZzdKFQlqGn9YInFJeLbdc2",
             name: "Beach Quimono Cover",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 26.99,
@@ -145,7 +145,7 @@ const initialState = {
             size: ['S', 'M', 'L']
         },
         {
-            id: 10,
+            id: "price_1MZzcrFQlqGn9YInh99W87Yy",
             name: "Yellow Bikini Set",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 16.99,
@@ -158,7 +158,7 @@ const initialState = {
             size: ['S', 'M', 'L']
         },
         {
-            id: 11,
+            id: "price_1MZzh1FQlqGn9YInO18xk4LY",
             name: "Bathsuit Classic",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 19.99,
@@ -171,7 +171,7 @@ const initialState = {
             size: ['M', 'L']
         },
         {
-            id: 12,
+            id: "price_1MZzhbFQlqGn9YIn5tp8QJs2",
             name: "Gray Bathsuit",
             desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
             price: 19.99,
