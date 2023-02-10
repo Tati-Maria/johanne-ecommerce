@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <section className='bg-[#eee]'>
         <Layout>
-            <div className='hidden md:grid md:grid-cols-3 lg:grid-cols-4 md:py-4'>
+            <div className='hidden md:grid md:grid-cols-3 lg:grid-cols-3 md:py-4'>
                 <div className='space-y-4'>
                     <h3 className='uppercase text-sm font-semibold text-slate-600'>Help & Information</h3>
                     <ul className='text-sm space-y-1 text-gray-500'>
@@ -34,10 +34,6 @@ const Footer = () => {
                         <li>Black Friday</li>
                         <li>Johanne x Chloè+</li>
                     </ul>
-                </div>
-                <div className='space-y-4'>
-                    <h3 className='uppercase text-sm font-semibold text-slate-600'>Shopping From:</h3>
-                    <span className='flex items-center text-sm text-gray-500'>You're in: Portugal</span>
                 </div>
             </div>
         </Layout>
