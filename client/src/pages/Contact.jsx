@@ -47,7 +47,7 @@ const Contact = () => {
       <Layout>
         <ContactHeader />
         <form 
-        className='my-20'
+        className='my-12'
         onSubmit={handleSubmit}>
           <legend className='font-semibold text-2xl py-10'>Contact Us</legend>
           <InputForm nameRef={nameRef} title="Name" handleInputChange={handleInputChange}/>
