@@ -1,6 +1,6 @@
-#Johanne E-commerce
+# Johanne E-commerce
 
-## Technologies
+### Technologies
 
 - [React](https://reactjs.org/).
 - [Redux Toolkit](https://redux-toolkit.js.org/).
