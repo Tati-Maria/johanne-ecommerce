@@ -5,6 +5,7 @@ import InputForm from "../components/InputForm";
 import EmailInput from "../components/EmailInput";
 import TextForm from "../components/TextForm";
 import {toast} from "react-toastify"
+import Questions from '../components/Questions';
 
 const Contact = () => {
 
@@ -20,7 +21,7 @@ const Contact = () => {
       [e.target.name]: e.target.value
     });
   }
-  
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,6 +61,8 @@ const Contact = () => {
             {submitting ? 'Submitting...' : 'Submit'}
           </button>
         </form>
+        <h2 className='text-4xl font-semibold text-center'>FAQ</h2>
+        <Questions />
       </Layout>
     </section>
   )
