@@ -2,6 +2,7 @@ import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { Outlet } from "react-router-dom";
 import Payments from "../components/Payments";
+import ScrollTo from "../utils/ScrollTo";
 
 const HomeLayout = () => {
   return (
@@ -10,6 +11,7 @@ const HomeLayout = () => {
       <Nav />
     </header>
     <main>
+      <ScrollTo />
       <Outlet />
     </main>
     <footer>
