@@ -100,7 +100,9 @@ const CartModal = () => {
                     <button
                     onClick={() => {
                         redirectCheckout();
-                        dispatch(resetCart());
+                        setTimeout(() => {
+                            dispatch(resetCart());
+                        }, 3000)
                     }}
                     className="bg-purple-600 px-10 py-1 w-full lg:w-max lg:mx-auto hover:text-purple-600 hover:bg-white duration-300"
                     >
