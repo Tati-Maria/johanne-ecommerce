@@ -1,21 +1,53 @@
 import {incrementQty, decrementQty, resetCart, removeFromCart} from "../redux/cartSlice";
+import {toast} from "react-toastify"
 import {FaTimes} from "react-icons/fa";
 import {BsDash, BsPlus} from "react-icons/bs"
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import {loadStripe} from "@stripe/stripe-js";
+
+
+let stripePromise;
+
+const getStripe = () => {
+    if(!stripePromise) {
+        stripePromise = loadStripe(import.meta.env.VITE_PUBLIC_KEY);
+    }
+
+    return stripePromise;
+}
 
 const CartModal = () => {
     const cartItems = useSelector(state => state.cart.cartItems);
     const dispatch = useDispatch();
+    
 
-    const totalPrice = () => {
-        let total = 0;
-        cartItems.forEach(
-            item => total += item.quantity * item.price
-        );
+   const items = cartItems?.map(item => {
+    return {
+        price: item.id,
+        quantity: item.quantity
+    }
+   })
 
-        return total.toFixed(2);
-    };
+   const checkoutOptions = {
+    lineItems: items,
+    mode: 'payment',
+    successUrl: `${window.location.origin}/success`,
+    cancelUrl: `${window.location.origin}/cancel`
+   }
+
+   //redirect checkout
+   const redirectCheckout = async() => {
+    console.log('redirect checkout');
+
+    const stripe = await getStripe();
+    const {error} = await stripe.redirectToCheckout(checkoutOptions);
+    if(error) {
+        toast.error(`${error.message}`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 1300
+        })
+    }
+   }
     
 
     return (
@@ -64,6 +96,7 @@ const CartModal = () => {
                         Reset Cart
                     </button>
                     <button
+                    onClick={redirectCheckout}
                     className="bg-purple-600 px-10 py-1 w-full lg:w-max lg:mx-auto hover:text-purple-600 hover:bg-white duration-300"
                     >
                         Pay with Stripe

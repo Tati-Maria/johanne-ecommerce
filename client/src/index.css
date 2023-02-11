@@ -15,6 +15,12 @@
 
 
 nav a:focus,
-nav a:hover{
-    @apply text-blue-600 duration-300;
+nav a:hover,
+nav a:active{
+    @apply text-orange-600 duration-300;
+}
+
+input:focus, 
+textarea:focus{
+    @apply bg-blue-50 placeholder:invisible
 }

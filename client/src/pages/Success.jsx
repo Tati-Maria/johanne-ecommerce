@@ -13,7 +13,7 @@ const Success = () => {
         <div>
         <h2 className='text-4xl text-green-500'>Thanks for shopping with us!</h2>
         <p className='text-xl'>Your order was placed successfully.</p>
-        <small className='text-gray-700'>*this is not a real e-commerce store. Just for test purposes only!</small>
+        <small className='text-gray-700'>*this is not a real store. Just for test purposes only!</small>
         </div>
         </div>
       </div>

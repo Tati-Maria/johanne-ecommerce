@@ -4,12 +4,10 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import Layout from "../layout/Layout";
 import {useSelector, useDispatch} from "react-redux";
 import {useParams} from "react-router-dom";
 import {addToCart} from "../redux/cartSlice";
-import {addToFavorites, removeFromFavorites} from "../redux/productSlice";
 import Featured from '../components/Featured';
 import { toast } from 'react-toastify';
 
@@ -100,7 +98,6 @@ const Product = () => {
             className='bg-black text-white py-2 px-6 text-lg border-2 border-black hover:bg-white hover:text-black  duration-300'>
               Add to Cart
             </button>
-            <FavoriteBorderOutlinedIcon className='text-black' />
             </div>
             <Accordion>
               <AccordionSummary

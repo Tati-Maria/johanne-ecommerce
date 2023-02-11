@@ -40,7 +40,7 @@ const About = () => {
         <div className='grid grid-cols-1 md:grid-cols-3 place-items-center gap-6'>
           {images.map(img => (
             <div key={img.id} className="flex flex-col gap-4 items-center">
-              <img src={img.img} alt={img.header} className="h-[400px] w-[400px] object-cover"/>
+              <img src={img.img} alt={img.header} className="h-[400px] w-[400px] object-cover border-[8px] border-t-violet-500 border-b-pink-400 border-r-lime-400 border-l-fuchsia-400"/>
               <div className='text-center space-y-4 '>
                 <h4 className='font-bold text-lg'>{img.header}</h4>
                 <p>{img.small}</p>

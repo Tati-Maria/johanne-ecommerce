@@ -13,7 +13,7 @@ const Hero = () => {
             <small className='text-center block text-base'>Johanne Summer Bikini <span className='italic font-thin'>2023</span></small>
             <div className='font-semibold text-base lg:text-lg'>
                 <Link to="products" className='uppercase'>
-                    <button className='bg-white text-black py-2 px-6 hover:bg-black hover:text-white duration-300'>
+                    <button className='bg-white text-black py-3 px-10 border-[3px] border-t-violet-500 border-b-pink-400 border-r-lime-400 border-l-fuchsia-400 hover:bg-black hover:text-white duration-300'>
                         Shop Bikini
                     </button>
                 </Link>

@@ -65,6 +65,8 @@ export const cartSlice = createSlice({
     }
 });
 
+export const savedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
 export const {addToCart, removeFromCart, incrementQty, decrementQty,resetCart} = cartSlice.actions;
 
 export default cartSlice.reducer;
