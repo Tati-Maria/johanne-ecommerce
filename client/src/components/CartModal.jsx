@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {loadStripe} from "@stripe/stripe-js";
 import { useState } from "react";
 
-
+//get stripe
 let stripePromise;
 
 const getStripe = () => {
@@ -17,7 +17,8 @@ const getStripe = () => {
     return stripePromise;
 }
 
-const CartModal = () => {
+//component
+const CartModal = ({open, setOpen}) => {
     const cartItems = useSelector(state => state.cart.cartItems);
     const dispatch = useDispatch();
     
@@ -53,8 +54,19 @@ const CartModal = () => {
     
 
     return (
-        <div className="text-white z-10 absolute inset-0 top-20 w-full h-96 overflow-y-scroll bg-slate-500 p-5 flex flex-col justify-between shadow" id="cart">
-            <h3 className="font-bold text-xl pb-6">Your Cart Items</h3>
+        <>
+        <div className="active p-4"  id="cart">
+            <div className="flex justify-between mb-6">
+                <h3 className="font-bold text-xl">Your Cart Items</h3>
+                <button
+                onClick={() => {
+                    setOpen(!open)
+                }}
+                className="text-2xl text-red-600"
+                >
+                    &times;
+                </button>
+            </div>
             {cartItems.length === 0 && <h4>Empty!</h4>}
             <div className="space-y-10 my-4">
                 {cartItems.map(item => (
@@ -66,7 +78,7 @@ const CartModal = () => {
                             <h4>{item.name}</h4>
                             <p>£ {item.price}</p>
                             <p>{item.size}</p>
-                            <div className="flex items-center gap-3 px-3 bg-black w-max">
+                            <div className="flex items-center gap-3 px-3 bg-black text-white w-max">
                                 <button
                                 onClick={() => dispatch(decrementQty(item))}
                                 >
@@ -104,7 +116,7 @@ const CartModal = () => {
                             dispatch(resetCart());
                         }, 3000)
                     }}
-                    className="bg-purple-600 px-10 py-1 w-full lg:w-max lg:mx-auto hover:text-purple-600 hover:bg-white duration-300"
+                    className="bg-purple-600 px-10 py-1 w-full lg:w-max lg:mx-auto hover:opacity-90 duration-300"
                     >
                         Pay with Stripe
                     </button>
@@ -113,6 +125,8 @@ const CartModal = () => {
             }
             
         </div>
+        <div className="overlay active"></div>
+        </>
     );
 };
 

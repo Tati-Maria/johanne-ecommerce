@@ -101,7 +101,7 @@ const Nav = () => {
                     </button>
                     </div>
                 </div>
-                {open && (<CartModal />)}
+                {open && (<CartModal open={open} setOpen={setOpen} />)}
             </Layout>
             {nav && (<MobileNav nav={nav} setNav={setNav} />)}
         </nav>
