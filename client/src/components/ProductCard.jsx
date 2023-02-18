@@ -20,13 +20,13 @@ const ProductCard = ({filteredProducts}) => {
     <>
     {filteredProducts.map(item => (
       <li key={item.id} className="flex flex-col">
-        <Link to={`/products/${item.id}`}>
+        <Link to={`/products/${item.id}`} className="flex flex-col py-6 gap-2 relative">
         
         <img 
         src={item.img} 
         alt={item.name} 
         className="object-cover float-left w-[400px] h-[400px] rounded-md" />
-       
+        {item.isNew ? <span className='absolute bg-white py-0.5 px-2 left-1 top-8 shadow-sm rounded-md'>New</span> : ''}
         </Link>
         <div className='flex justify-between items-center py-3 px-1'>
         <div className='flex flex-col'>

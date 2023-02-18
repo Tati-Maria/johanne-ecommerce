@@ -9,7 +9,7 @@ const Footer = () => {
             <div className='hidden md:grid md:grid-cols-3 lg:grid-cols-3 md:py-4'>
                 <div className='space-y-4'>
                     <h3 className='uppercase text-sm font-semibold text-slate-600'>Help & Information</h3>
-                    <ul className='text-sm space-y-1 text-gray-500'>
+                    <ul className='text-sm space-y-1 text-slate-500'>
                         <li>Help</li>
                         <li>Track order</li>
                         <li>Delivery & returns</li>

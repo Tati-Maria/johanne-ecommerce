@@ -65,7 +65,7 @@ const Product = () => {
           {/*Product Info */}
           <div className='space-y-10 pt-5'>
             <div className='space-y-5'>
-              <h3 className='font-thin text-3xl'>{item.name}</h3>
+              <h3 className='font-thin text-3xl'>{item.name} {item.isNew ? <span className='text-red-600 text-sm'>New</span> : ''}</h3>
               <p className='font-bold text-lg'>£ {item.price}</p>
             </div>
               <ul className='flex items-center gap-6'>

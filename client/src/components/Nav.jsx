@@ -32,7 +32,7 @@ const Nav = () => {
 
 
     return (
-        <nav className="text-white bg-gray-700 relative">
+        <nav >
             <Layout>
                 <div className="flex items-center justify-between">
                     <NavLink to="/" className="focus:text-white hover:text-white">
