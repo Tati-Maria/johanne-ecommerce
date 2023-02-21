@@ -31,7 +31,7 @@ I build this project to enhace my skills with React and Redux. The ultimate goal
 
 ## Still Working
 
-I am still working on this project UI and learning more about Redux Persist to be store the product data in the localStorage. Also, studying Nodejs and MondoDB to make this project a fullstack.
+I am still working on this project UI and learning more about Redux Persist to be store the product data in the localStorage. Also, studying Nodejs and MongoDB to make this project a fullstack.
 
 ## Hosting
 
