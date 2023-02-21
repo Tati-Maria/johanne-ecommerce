@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        worksans: ['Futura PT', 'sans-serif']
+        worksans: ['Outfit', 'sans-serif']
       }
     },
   },

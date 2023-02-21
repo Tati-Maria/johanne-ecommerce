@@ -32,10 +32,10 @@ const Nav = () => {
 
 
     return (
-        <nav >
+        <nav className="py-4">
             <Layout>
                 <div className="flex items-center justify-between">
-                    <NavLink to="/" className="focus:text-white hover:text-white">
+                    <NavLink to="/" className="focus:text-black hover:text-black">
                     <span 
                     className="font-semibold text-3xl"
                     >
@@ -47,7 +47,7 @@ const Nav = () => {
                         </small>
                     </span>
                     </NavLink>
-                    <ul className="hidden lg:flex items-center space-x-10 uppercase">
+                    <ul className="hidden lg:flex items-center space-x-10 capitalize">
                         <li>
                             <NavLink to="/">
                                 Home
@@ -55,7 +55,7 @@ const Nav = () => {
                         </li>
                         <li>
                             <NavLink to="/products">
-                                Store
+                                Swimwear
                             </NavLink>
                         </li>
                         <li>
@@ -75,7 +75,7 @@ const Nav = () => {
                         <NavLink to="favorites">
                             <Tooltip title="Favorites">
                                 <IconButton>
-                                    <BsSuitHeartFill size={20} color="white" />
+                                    <BsSuitHeartFill size={20} color="#000" />
                                 </IconButton>
                             </Tooltip>
                         </NavLink>
@@ -83,7 +83,7 @@ const Nav = () => {
                         <div onClick={() => setOpen(!open)}>
                             <IconButton aria-label="cart">
                                 <StyledBadge badgeContent={`${cartItems.length}`} color="primary">
-                                    <BsCartFill size={20} color="white"/>
+                                    <BsCartFill size={20} color="#000"/>
                                 </StyledBadge>
                             </IconButton>
                         </div>
@@ -92,12 +92,12 @@ const Nav = () => {
                         <div onClick={() => setOpen(!open)} role="button" tabIndex="0" aria-label="button">
                             <IconButton aria-label="cart">
                                 <StyledBadge badgeContent={`${cartItems.length}`} color="primary">
-                                    <BsCartFill size={20} color="white"/>
+                                    <BsCartFill size={20} color="#000"/>
                                 </StyledBadge>
                             </IconButton>
                         </div>
                     <button onClick={() => setNav(!nav)}>
-                        {nav ? <FaTimes size={30} color="red" /> : <RxHamburgerMenu size={30} />}
+                        <RxHamburgerMenu size={30} />
                     </button>
                     </div>
                 </div>

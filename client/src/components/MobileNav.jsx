@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import hero from "../assets/images/bikini.jpg";
+
 
 const MobileNav = ({setNav}) => {
 
@@ -10,10 +10,10 @@ const MobileNav = ({setNav}) => {
 
   return (
     <div className='block bg-black/10 min-h-screen  w-full right-0 z-20 absolute lg:hidden'>
-        <div
-        style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${hero})`}}  
-        className='fixed right-0 bg-cover bg-center w-[50%] min-h-screen text-white text-lg flex items-center justify-center'>
-            <ul className='flex flex-col items-center gap-10 text-2xl'>
+        <div 
+        className='fixed right-0 top-0 bg-cover bg-center w-[40%] min-h-screen text-lg  bg-white'>
+            <span id="close" className='text-red-600 text-4xl cursor-pointer block text-right pr-10 pt-10 ' onClick={closeNav} role='button'>&times;</span>
+            <ul className='flex flex-col items-end gap-10 w-full pr-10 pt-20 text-sm md:text-base'>
                 <li>
                     <NavLink to="/" onClick={closeNav}>
                     Home
@@ -21,7 +21,12 @@ const MobileNav = ({setNav}) => {
                 </li>
                 <li>
                     <NavLink to="products" onClick={closeNav}>
-                        Store
+                        Swimwear
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="favorites" onClick={closeNav}>
+                        Favorites
                     </NavLink>
                 </li>
                 <li>
@@ -32,11 +37,6 @@ const MobileNav = ({setNav}) => {
                 <li>
                     <NavLink to="contact" onClick={closeNav}>
                         Contact Us
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="favorites" onClick={closeNav}>
-                        Favorites
                     </NavLink>
                 </li>
             </ul>

@@ -7,10 +7,10 @@ import ScrollTo from "../utils/ScrollTo";
 const HomeLayout = () => {
   return (
     <>
-    <header className={`text-white fixed w-full bg-slate-700 z-20`}>
+    <header className={`z-20 `}>
       <Nav />
     </header>
-    <main className="pt-20">
+    <main className="">
       <ScrollTo />
       <Outlet />
     </main>
