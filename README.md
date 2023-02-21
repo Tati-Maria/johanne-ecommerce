@@ -10,6 +10,9 @@
 - [MUI](https://mui.com/)
 - [Stripe](https://stripe.com/)
 
+## Screenshot(The UI might change)
+![image](https://user-images.githubusercontent.com/107408196/220383207-40ff6726-d116-40b9-b8c4-7b534d32ddd4.png)
+
 ## About
 
 **Johanne** is a fictional e-commerce store related to swimwear.
@@ -34,4 +37,5 @@ I am still working on this project UI and learning more about Redux Persist to b
 
 The project is currently being hosted on Vercel
 
-![Screen Shot 2023-02-11 at 15 27 23](https://user-images.githubusercontent.com/107408196/218266865-4e733de6-ffed-4ade-ad1e-97a5925ceec3.png)
+
+
