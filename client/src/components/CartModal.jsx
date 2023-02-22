@@ -4,7 +4,6 @@ import {FaTimes} from "react-icons/fa";
 import {BsDash, BsPlus} from "react-icons/bs"
 import { useSelector, useDispatch } from "react-redux";
 import {loadStripe} from "@stripe/stripe-js";
-import { useState } from "react";
 
 //get stripe
 let stripePromise;
@@ -39,7 +38,6 @@ const CartModal = ({open, setOpen}) => {
 
    //redirect checkout
    const redirectCheckout = async() => {
-    console.log('redirect checkout');
     const stripe = await getStripe();
     const {error} = await stripe.redirectToCheckout(checkoutOptions);
     if(error) {
@@ -112,9 +110,7 @@ const CartModal = ({open, setOpen}) => {
                     <button
                     onClick={() => {
                         redirectCheckout();
-                        setTimeout(() => {
-                            dispatch(resetCart());
-                        }, 3000)
+                       resetCart()
                     }}
                     className="bg-purple-600 px-10 py-1 w-full lg:w-max lg:mx-auto hover:opacity-90 duration-300"
                     >

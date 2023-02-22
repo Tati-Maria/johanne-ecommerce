@@ -7,7 +7,7 @@ const Hero = () => {
     <section className='flex flex-col justify-center  text-white'>
         <Layout>
         <div className='flex items-center flex-col space-y-10'>
-            <h1 className='text-center font-bold capitalize text-4xl md:text-5xl lg:text-6xl'>
+            <h1 className='text-center font-medium capitalize text-4xl md:text-5xl lg:text-6xl'>
                 Shop Our Newest Collection
             </h1>
             <small className='text-center block text-base'>Johanne Summer Bikini <span className='italic font-thin'>2023</span></small>

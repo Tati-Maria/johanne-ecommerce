@@ -34,7 +34,7 @@ const initialState = {
             price: 20.99,
             img: pink,
             img2: pink2,
-            isNew: true,
+            isNew: false,
             category: "bikini",
             featured: false,
             trending: true,
@@ -62,7 +62,7 @@ const initialState = {
             img2: beachBag2,
             isNew: false,
             category: "accessories",
-            featured: true,
+            featured: false,
             trending: false,
             size: ['U']
         },
@@ -73,10 +73,10 @@ const initialState = {
             price: 35.99,
             img: bohoFloral,
             img2: bohoFloral2,
-            isNew: false,
+            isNew: true,
             category: "bikini",
             featured: false,
-            trending: true,
+            trending: false,
             size: ['S', 'M', 'L']
         },
         {
@@ -166,7 +166,7 @@ const initialState = {
             img2: longsleeve2,
             isNew: false,
             category: "bikini",
-            featured: false,
+            featured: true,
             trending: false,
             size: ['M', 'L']
         },
@@ -177,7 +177,7 @@ const initialState = {
             price: 19.99,
             img: gray,
             img2: gray2,
-            isNew: false,
+            isNew: true,
             category: "bikini",
             featured: false,
             trending: false,

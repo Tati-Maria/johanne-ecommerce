@@ -1,9 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Layout from "../layout/Layout";
 import {useSelector, useDispatch} from "react-redux";
 import {useParams} from "react-router-dom";
@@ -41,18 +36,18 @@ const Product = () => {
   return (
     <section className='min-h-screen py-5'>
       <Layout>
-        <div className='grid grid-cols-1 place-items-center md:grid-cols-2 gap-10'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
           {/*Images */}
-          <div className='flex item-center gap-6'>
+          <div className='flex item-center gap-6 flex-col-reverse md:flex-row'>
             {/*Side Images */}
-            <div className='hidden lg:flex flex-col gap-4'>
+            <div className='flex flex-row md:flex-col  gap-4'>
               <img
-              className='h-[150px] w-[500px] object-cover float-left cursor-pointer' 
+              className='w-[100px] h-[100px] md:h-[150px] md:w-[500px] object-cover float-left cursor-pointer' 
               src={item.img} 
               alt={item.name} 
               onClick={() => setSelectedImg(item.img)} />
               <img
-              className='h-[150px] w-[500px] object-cover float-left cursor-pointer' 
+              className='w-[100px] h-[100px] md:h-[150px] md:w-[500px] object-cover float-left cursor-pointer' 
               src={item.img2} 
               alt={item.name} 
               onClick={() => setSelectedImg(item.img2)} />
@@ -65,8 +60,12 @@ const Product = () => {
           {/*Product Info */}
           <div className='space-y-10 pt-5'>
             <div className='space-y-5'>
-              <h3 className='font-thin text-3xl'>{item.name} {item.isNew ? <span className='text-red-600 text-sm'>New</span> : ''}</h3>
-              <p className='font-bold text-lg'>£ {item.price}</p>
+              <div className='border border-gray-400 p-2 w-max'>
+              {item.isNew ? <span className='text-sm uppercase'>New</span> : ''}
+              </div>
+              <h3 className='font-light text-3xl'>{item.name}</h3>
+              <p className='text-gray-400'>{item.desc}</p>
+              <p className='text-xl font-light'>£ {item.price}</p>
             </div>
               <ul className='flex items-center gap-6'>
                 <span className='text-xl font-semibold'>Sizes:</span> 
@@ -99,48 +98,7 @@ const Product = () => {
               Add to Cart
             </button>
             </div>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography>Description</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  {item.desc}
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography>Product Care</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  {item.desc}
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
-            <Accordion>
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography>Product Type</Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Typography>
-                  {item.category}
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
+            
           </div>
         </div>
         <Featured />

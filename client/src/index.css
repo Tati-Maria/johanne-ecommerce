@@ -2,8 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    
+.side-bar{
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    transform: translateX(100%);
+    transition: transform .3s ease-in-out;
+}
+
+.side-bar.visible{
+    transform: translateX(0);
 }
 
 #cart::-webkit-scrollbar{
