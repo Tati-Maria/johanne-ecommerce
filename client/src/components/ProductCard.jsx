@@ -25,7 +25,8 @@ const ProductCard = ({filteredProducts}) => {
         src={item.img} 
         alt={item.name} 
         className="object-cover w-[200px] h-[200px] md:w-[300px] md:h-[300px] float-left lg:w-[400px] lg:h-[400px] rounded-md" />
-        {item.isNew ? <span className='text-sm absolute bg-white py-0.5 px-2 left-1 top-8 shadow-sm rounded-md md:text-lg'>New</span> : ''}
+        {item.isNew ? <span className='text-sm absolute bg-white py-0.5 px-2 right-1 bottom-8 shadow-sm rounded-md md:text-lg'>New</span> : ''}
+        {item.onSale ? <span className='text-sm absolute bg-red-600 text-white py-0.5 px-2 right-1 top-8 shadow-sm rounded-md md:text-lg'>-30%OFF</span> : ''}
         </Link>
         <div className='flex justify-between items-center py-3 px-1'>
         <div className='flex flex-col'>
