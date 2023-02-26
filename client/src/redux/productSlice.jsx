@@ -38,7 +38,8 @@ const initialState = {
             category: "bikini",
             featured: false,
             trending: true,
-            size: ['S', 'M', 'L']
+            size: ['S', 'M', 'L'],
+            onSale: true,
         },
         {
             id: "price_1MZzZQFQlqGn9YIn8VzZOvzC",
@@ -51,7 +52,8 @@ const initialState = {
             category: "bikini",
             featured: true,
             trending: false,
-            size: ['S', 'M', 'L']
+            size: ['S', 'M', 'L'],
+            onSale: false,
         },
         {
             id: "price_1MZza3FQlqGn9YIn9WwKRvbS",
@@ -64,7 +66,8 @@ const initialState = {
             category: "accessories",
             featured: false,
             trending: false,
-            size: ['U']
+            size: ['U'],
+            onSale: false,
         },
         {
             id: "price_1MZzaTFQlqGn9YInYuxAAX9R",
@@ -77,7 +80,8 @@ const initialState = {
             category: "bikini",
             featured: false,
             trending: false,
-            size: ['S', 'M', 'L']
+            size: ['S', 'M', 'L'],
+            onSale: false,
         },
         {
             id: "price_1MZzaqFQlqGn9YInTg1ZzXiy",
@@ -90,7 +94,8 @@ const initialState = {
             category: "bikini",
             featured: false,
             trending: true,
-            size: ['S', 'M', 'L']
+            size: ['S', 'M', 'L'],
+            onSale: true,
         },
         {
             id: "price_1MZzbEFQlqGn9YInZTUpzVMN",
@@ -103,7 +108,8 @@ const initialState = {
             category: "accessories",
             featured: false,
             trending: true,
-            size: ['S', 'M',]
+            size: ['S', 'M',],
+            onSale: false,
         },
         {
             id: "price_1MZzbhFQlqGn9YIn0yBSeciQ",
@@ -116,7 +122,8 @@ const initialState = {
             category: "accessories",
             featured: true,
             trending: false,
-            size: ['S', 'M', 'L']
+            size: ['S', 'M', 'L'],
+            onSale: false,
         },
         {
             id: "price_1MZzc8FQlqGn9YInJtWqv2rZ",
@@ -129,7 +136,8 @@ const initialState = {
             category: "bikini",
             featured: false,
             trending: true,
-            size: ['S', 'M', 'L']
+            size: ['S', 'M', 'L'],
+            onSale: false,
         },
         {
             id: "price_1MZzdKFQlqGn9YInFJeLbdc2",
@@ -142,7 +150,8 @@ const initialState = {
             category: "accessories",
             featured: false,
             trending: true,
-            size: ['S', 'M', 'L']
+            size: ['S', 'M', 'L'],
+            onSale: true,
         },
         {
             id: "price_1MZzcrFQlqGn9YInh99W87Yy",
@@ -155,7 +164,8 @@ const initialState = {
             category: "bikini",
             featured: false,
             trending: true,
-            size: ['S', 'M', 'L']
+            size: ['S', 'M', 'L'],
+            onSale: false,
         },
         {
             id: "price_1MZzh1FQlqGn9YInO18xk4LY",
@@ -168,7 +178,8 @@ const initialState = {
             category: "bikini",
             featured: true,
             trending: false,
-            size: ['M', 'L']
+            size: ['M', 'L'],
+            onSale: true,
         },
         {
             id: "price_1MZzhbFQlqGn9YIn5tp8QJs2",
@@ -181,7 +192,8 @@ const initialState = {
             category: "bikini",
             featured: false,
             trending: false,
-            size: ['S', 'M']
+            size: ['S', 'M'],
+            onSale: false,
         },
     ],
     favorites: []
