@@ -61,11 +61,14 @@ const Product = () => {
           <div className='space-y-10 pt-5'>
             <div className='space-y-5'>
               <div className='border border-gray-400 p-2 w-max'>
-              {item.isNew ? <span className='text-sm uppercase'>New</span> : ''}
+              {item.isNew ? <span className='text-sm uppercase'>New</span> : item.onSale ? <span className='text-sm uppercase'>-30%OFF</span> : null}
               </div>
               <h3 className='font-light text-xl  md:text-3xl'>{item.name}</h3>
               <p className='text-gray-400'>{item.desc}</p>
-              <p className='text-base md:text-xl font-light'>£ {item.price}</p>
+              <p className='text-base md:text-xl font-light'>
+              {item.onSale ? (<span className='font-normal line-through text-gray-400 text-sm'>£ {item.price}</span>) : <span>£ {item.price}</span>}
+              {item.onSale && (<span className='text-red-500'> £ {(item.price * 0.7).toFixed(2)}</span>)}
+              </p>
             </div>
               <ul className='flex items-center gap-6'>
                 <span className='text-lg md:text-xl font-semibold'>Sizes:</span> 

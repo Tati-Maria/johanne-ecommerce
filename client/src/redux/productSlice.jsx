@@ -132,7 +132,7 @@ const initialState = {
             price: 29.99,
             img: greenBikini2,
             img2: greenBikini,
-            isNew: true,
+            isNew: false,
             category: "bikini",
             featured: false,
             trending: true,

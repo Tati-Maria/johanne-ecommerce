@@ -31,7 +31,10 @@ const ProductCard = ({filteredProducts}) => {
         <div className='flex justify-between items-center py-3 px-1'>
         <div className='flex flex-col'>
         <h4 className='text-sm sm:text-base'>{item.name}</h4>
-        <p className=' text-sm sm:text-base lg:text-lg font-bold'>£ {item.price}</p>
+        <p className=' text-sm sm:text-base lg:text-lg font-bold'>
+        {item.onSale ? (<span className='font-normal line-through text-gray-400 text-sm'>£ {item.price}</span>) : <span>£ {item.price}</span>}
+        {item.onSale && (<span className='text-red-500'> £ {(item.price * 0.7).toFixed(2)}</span>)}
+        </p>
         </div>
         <div 
         className='cursor-pointer'
