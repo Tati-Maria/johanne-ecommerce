@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import {BsHeart, BsHeartFill} from "react-icons/bs";
 import { addToFavorites, removeFromFavorites } from '../redux/productSlice';
 import { Link } from 'react-router-dom';
-import ErrorElement from '../pages/404';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const ProductCard = ({filteredProducts}) => {
   const[toggleFavorites, setToggleFavorites] = useState(false);
@@ -25,13 +24,13 @@ const ProductCard = ({filteredProducts}) => {
         <img 
         src={item.img} 
         alt={item.name} 
-        className="object-cover float-left w-[400px] h-[400px] rounded-md" />
-        {item.isNew ? <span className='absolute bg-white py-0.5 px-2 left-1 top-8 shadow-sm rounded-md'>New</span> : ''}
+        className="object-cover w-[200px] h-[200px] md:w-[300px] md:h-[300px] float-left lg:w-[400px] lg:h-[400px] rounded-md" />
+        {item.isNew ? <span className='text-sm absolute bg-white py-0.5 px-2 left-1 top-8 shadow-sm rounded-md md:text-lg'>New</span> : ''}
         </Link>
         <div className='flex justify-between items-center py-3 px-1'>
         <div className='flex flex-col'>
-        <h4 className='text-sm'>{item.name}</h4>
-        <p className='text-lg font-bold'>£ {item.price}</p>
+        <h4 className='text-sm sm:text-base'>{item.name}</h4>
+        <p className=' text-sm sm:text-base lg:text-lg font-bold'>£ {item.price}</p>
         </div>
         <div 
         className='cursor-pointer'
@@ -49,7 +48,7 @@ const ProductCard = ({filteredProducts}) => {
           handleToggle(item.id);
         }}
         >
-        {toggleFavorites[item.id] ? (<BsHeartFill size={20} color="black" />) : (<BsHeart size={20}/>)}
+        {toggleFavorites[item.id] ? (<BsHeartFill  color="black" className='text-base md:text-lg' />) : (<BsHeart  className='text-base md:text-xl'/>)}
         </div>
         </div>
       </li>

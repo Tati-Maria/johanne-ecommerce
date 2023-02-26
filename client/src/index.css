@@ -76,3 +76,25 @@ input:focus,
 textarea:focus{
     @apply bg-blue-50 placeholder:invisible
 }
+
+.text {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    white-space: nowrap;
+    animation: slide 30s linear infinite alternate both;
+}
+
+@keyframes slide{
+    0%{
+        transform: TranslateX(100%);
+    }
+
+    50%{
+        transform: TranslateX(0%);
+    }
+    
+    100%{
+        transform: TranslateX(-100%);
+    }
+}

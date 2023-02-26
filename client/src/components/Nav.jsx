@@ -32,19 +32,14 @@ const Nav = () => {
 
 
     return (
-        <nav className="py-4">
+        <nav>
             <Layout>
                 <div className="flex items-center justify-between">
                     <NavLink to="/" className="focus:text-black hover:text-black">
                     <span 
-                    className="font-semibold text-3xl"
+                    className="flex flex-col font-semibold text-3xl"
                     >
                         Johanne
-                        <small 
-                        className="text-xs font-thin pl-0.5"
-                        >
-                            Summer Bikinis
-                        </small>
                     </span>
                     </NavLink>
                     <ul className="hidden lg:flex items-center space-x-10 capitalize">

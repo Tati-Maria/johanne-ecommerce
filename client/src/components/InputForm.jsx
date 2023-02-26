@@ -4,7 +4,7 @@ const InputForm = ({title, handleInputChange, nameRef}) => {
   return (
     <fieldset className='flex flex-col gap-2'>
         <label
-        className='text-xl ' 
+        className='text-lg md:text-xl' 
         htmlFor="name"
         >{title}
         </label>

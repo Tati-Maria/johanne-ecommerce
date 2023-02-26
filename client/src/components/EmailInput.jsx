@@ -4,7 +4,7 @@ const EmailInput = ({title, handleInputChange, emailRef}) => {
   return (
     <fieldset className='flex flex-col gap-2 my-5'>
         <label
-        className='text-xl ' 
+        className='text-lg md:text-xl' 
         htmlFor="email"
         >
           {title}

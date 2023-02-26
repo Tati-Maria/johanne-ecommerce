@@ -39,9 +39,8 @@ const Products = () => {
   return (
     <section>
         <Layout>
-            <section className='flex flex-col items-center  md:items-start md:flex-row gap-6 py-16'>
-            <div className='w-full md:w-[200px] flex justify-between flex-row md:flex-col gap-6 md:sticky h-full md:top-[50px]'>
-                <small>Summer Bikinis 2023</small>
+            <section className='flex flex-col items-start  lg:items-start lg:flex-row gap-6 py-16'>
+            <div className='w-full md:w-[200px] flex justify-between flex-row md:flex-col gap-6 lg:sticky h-full lg:top-[50px]'>
             <div>
             <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
                 <InputLabel>
@@ -63,18 +62,6 @@ const Products = () => {
                 <MenuItem value='trending'>Trending</MenuItem>
             </Select>
             </FormControl>
-                {/* <select
-                className='border-2 border-black'
-                value={filterProduct} 
-                onChange={handleFilterChange}
-                name="category" 
-                id="category" >
-                    <option value="all">All</option>
-                    <option value="bikini">Bikinis</option>
-                    <option value="accessories">Accessories</option>
-                    <option value="new">New</option>
-                    <option value="trending">Trending</option>
-                </select> */}
             </div>
             </div>
             {/*Right for product display */}

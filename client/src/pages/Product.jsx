@@ -36,18 +36,18 @@ const Product = () => {
   return (
     <section className='min-h-screen py-5'>
       <Layout>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
           {/*Images */}
-          <div className='flex item-center gap-6 flex-col-reverse md:flex-row'>
+          <div className='flex item-center gap-6 flex-col-reverse lg:flex-row'>
             {/*Side Images */}
-            <div className='flex flex-row md:flex-col  gap-4'>
+            <div className='flex flex-row lg:flex-col  gap-4'>
               <img
-              className='w-[100px] h-[100px] md:h-[150px] md:w-[500px] object-cover float-left cursor-pointer' 
+              className='w-[100px] h-[100px] md:h-[150px] md:w-[200px]  lg:h-[150px] lg:w-[500px] object-cover float-left cursor-pointer' 
               src={item.img} 
               alt={item.name} 
               onClick={() => setSelectedImg(item.img)} />
               <img
-              className='w-[100px] h-[100px] md:h-[150px] md:w-[500px] object-cover float-left cursor-pointer' 
+              className='w-[100px] h-[100px] md:h-[150px] md:w-[200px] lg:h-[150px] lg:w-[500px] object-cover float-left cursor-pointer' 
               src={item.img2} 
               alt={item.name} 
               onClick={() => setSelectedImg(item.img2)} />
@@ -63,14 +63,14 @@ const Product = () => {
               <div className='border border-gray-400 p-2 w-max'>
               {item.isNew ? <span className='text-sm uppercase'>New</span> : ''}
               </div>
-              <h3 className='font-light text-3xl'>{item.name}</h3>
+              <h3 className='font-light text-xl  md:text-3xl'>{item.name}</h3>
               <p className='text-gray-400'>{item.desc}</p>
-              <p className='text-xl font-light'>£ {item.price}</p>
+              <p className='text-base md:text-xl font-light'>£ {item.price}</p>
             </div>
               <ul className='flex items-center gap-6'>
-                <span className='text-xl font-semibold'>Sizes:</span> 
+                <span className='text-lg md:text-xl font-semibold'>Sizes:</span> 
               {sizes.map((size) => (
-                <li className='text-lg' key={size}>
+                <li className='text-base md:text-lg' key={size}>
                   <span
                   onClick={() => handleSizeChoice(size)}
                   className='block text-center cursor-pointer hover:text-blue-600'
@@ -94,7 +94,7 @@ const Product = () => {
                 });
               }
             }}
-            className='bg-black text-white py-2 px-6 text-lg border-2 border-black hover:bg-white hover:text-black  duration-300'>
+            className='bg-black text-white py-2 px-6 text-sm md:text-lg border-2 border-black hover:bg-white hover:text-black duration-300 active:shadow-sm focus:shadow-sm'>
               Add to Cart
             </button>
             </div>

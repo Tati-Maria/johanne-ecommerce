@@ -9,17 +9,17 @@ const Featured = (props) => {
 
   return (
     <div className='my-20'>
-        <h2 className='text-4xl py-10 text-center text-gray-700'>Explore More</h2>
-        <div className='grid grid-cols-1 lg:grid-cols-3 gap-10'>
+        <h2 className='text-2xl md:text-4xl py-10 text-center text-gray-700'>Explore More</h2>
+        <div className='grid grid-cols-2 md:grid-cols-3 gap-10'>
         {trending.map(trend => (
            
             <div key={trend.id} className="flex flex-col py-6 gap-5 relative">
               <Link to={`/products/${trend.id}`}>
-                <img src={trend.img} alt="" className='object-cover float-left w-[400px] h-[400px] rounded-md' />
+                <img src={trend.img} alt="" className='object-cover w-[200px] h-[200px] float-left md:w-[300px] md:h-[300px] rounded-sm lg:w-[400px] lg:h-[400px]' />
               </Link>
-            <div className='flex justify-between px-1'>
-                <h4 className='font-light text-xl'>{trend.name}</h4>
-                <p className='font-bold text-xl'>£ {trend.price}</p>
+            <div className='flex flex-col px-1'>
+                <h4 className='font-light text-sm md:text-lg'>{trend.name}</h4>
+                <p className='font-bold text-sm md:text-lg'>£ {trend.price}</p>
             </div>
             
         </div>

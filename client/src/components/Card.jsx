@@ -10,11 +10,11 @@ const Card = ({id, title, price, image}) => {
   return (
     <div className='flex flex-col gap-4 relative'>
         <Link to={`/products/${id}`}>
-        <img src={image} alt={title} className="object-cover float-left w-[400px] h-[400px] rounded-md" />
+        <img src={image} alt={title} className="object-cover w-[200px] h-[200px] float-left md:w-[400px] md:h-[400px] rounded-md" />
         </Link>
-        <div className='flex items-center justify-between px-1'>
-            <h4>{title}</h4>
-            <p className='font-bold'>£ {price}</p>
+        <div className='flex flex-col px-1'>
+            <h4 className='text-sm sm:text-base md:text-lg'>{title}</h4>
+            <p className='font-bold text-sm sm:text-base md:text-lg'>£ {price}</p>
         </div>
         
         <TiTimes
