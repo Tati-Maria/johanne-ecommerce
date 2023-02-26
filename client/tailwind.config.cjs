@@ -5,7 +5,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        worksans: ['Outfit', 'sans-serif']
+        worksans: ['Outfit', 'sans-serif'],
+        zen: ['Zen Kurenaido', 'sans-serif'],
       }
     },
   },

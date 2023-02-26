@@ -1,10 +1,9 @@
 import React from 'react'
 
-const Box = ({price, name}) => {
+const Box = () => {
   return (
-    <div className='bg-white/25 font-light p-4  rounded-md shadow-black absolute bottom-10 right-10'>
-        <h2 className='text-lg font-normal'>{name}</h2>
-        <p>£ {price}</p>
+    <div className='bg-white font-light p-4  rounded-md shadow-sm shadow-black/40 w-52 absolute right-4 bottom-4'>
+        <p>Our swimwear is designed to make you feel comfortable and confident in your own skin.</p>
     </div>
   )
 }

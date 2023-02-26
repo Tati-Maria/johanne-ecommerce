@@ -3,7 +3,7 @@ import {TiTimes} from "react-icons/ti";
 import { removeFromFavorites } from '../redux/productSlice';
 import { useDispatch} from 'react-redux';
 
-const Card = ({id, title, price, image}) => {
+const Card = ({id, title, price, image, newPrice}) => {
   const dispatch = useDispatch();
 
 
@@ -14,7 +14,10 @@ const Card = ({id, title, price, image}) => {
         </Link>
         <div className='flex flex-col px-1'>
             <h4 className='text-sm sm:text-base md:text-lg'>{title}</h4>
-            <p className='font-bold text-sm sm:text-base md:text-lg'>£ {price}</p>
+            <p className='font-bold text-sm sm:text-base md:text-lg'>
+            {newPrice ? (<span className='font-normal line-through text-gray-400 text-sm'>£ {price}</span>) : <span>£ {price}</span>}
+            {newPrice && <span className='text-red-500'> £ {newPrice}</span>}
+            </p>
         </div>
         
         <TiTimes

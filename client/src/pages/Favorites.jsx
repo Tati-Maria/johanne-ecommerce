@@ -23,10 +23,10 @@ const Favorites = () => {
               </Link>
             </div>
         }
-        <ul className='my-4 grid grid-cols-2 place-items-center gap-10  lg:grid-cols-3'>
+        <ul className='my-4 grid grid-cols-2 sm:grid-cols-3 place-items-center gap-10  lg:grid-cols-4'>
           {products.map(prod => (
                 <li key={prod.id}>
-                  <Card id={prod.id} title={prod.title} price={prod.price} image={prod.image}  />
+                  <Card id={prod.id} title={prod.title} price={prod.price} image={prod.image} newPrice={prod.newPrice}  />
                 </li>
               ))
           }

@@ -28,7 +28,7 @@ const ProductCard = ({filteredProducts}) => {
         {item.isNew ? <span className='text-sm absolute bg-white py-0.5 px-2 right-1 bottom-8 shadow-sm rounded-md md:text-lg'>New</span> : ''}
         {item.onSale ? <span className='text-sm absolute bg-red-600 text-white py-0.5 px-2 right-1 top-8 shadow-sm rounded-md md:text-lg'>-30%OFF</span> : ''}
         </Link>
-        <div className='flex justify-between items-center py-3 px-1'>
+        <div className='flex justify-between items-center px-1'>
         <div className='flex flex-col'>
         <h4 className='text-sm sm:text-base'>{item.name}</h4>
         <p className=' text-sm sm:text-base lg:text-lg font-bold'>
@@ -44,6 +44,7 @@ const ProductCard = ({filteredProducts}) => {
               id: item.id,
               title: item.name,
               price: item.price,
+              newPrice: item.onSale ? (item.price * 0.7).toFixed(2) : '',
               image: item.img
             }));
           } else {

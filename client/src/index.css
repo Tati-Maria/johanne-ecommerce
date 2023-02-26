@@ -98,3 +98,10 @@ textarea:focus{
         transform: TranslateX(-100%);
     }
 }
+
+.tex{
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    line-height: 100px;
+    margin-top: 50px;
+}
