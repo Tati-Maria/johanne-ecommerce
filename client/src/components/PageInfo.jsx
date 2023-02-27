@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 
 const PageInfo = () => {
   return (
-    <div className='bg-black h-[50px] relative overflow-hidden'>
-      <div className=' text-white py-2'>
-          <p className='text'>This is a fictional e-commerce website built by <Link className='text-orange-500' to="https://github.com/Tati-Maria">Maria</Link></p>
+    <div className='relative overflow-hidden bg-yellow-200 py-2'>
+      <div className='flex items-center justify-center'>
+          <p className='px-6 text-xs text-center md:text-base'>Free home delivery over £70</p>
+          <p className=' border-black border-x-2 px-6 text-xs text-center md:text-base'>Delivery Details</p>
+          <p className='px-6 text-xs text-center md:text-base'>Returns and Refunds</p>
       </div>
     </div>
   )
