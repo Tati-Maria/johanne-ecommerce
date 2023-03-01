@@ -24,33 +24,26 @@ const ProductCard = ({filteredProducts}) => {
         <img 
         src={item.img} 
         alt={item.name} 
-        className="object-cover w-[200px] h-[200px] md:w-[300px] md:h-[300px] float-left lg:w-[400px] lg:h-[400px] rounded-md" />
-        {item.isNew ? <span className='text-sm absolute bg-white py-0.5 px-2 right-1 bottom-8 shadow-sm rounded-md md:text-lg'>New</span> : ''}
-        {item.onSale ? <span className='text-sm absolute bg-red-600 text-white py-0.5 px-2 right-1 top-8 shadow-sm rounded-md md:text-lg'>-30%OFF</span> : ''}
+        className="object-cover w-[200px] h-[200px] md:w-[300px] md:h-[300px] float-left lg:w-[350px] lg:h-[350px] xl:w-[400px] xl:h-[400px]" />
+        {item.onSale ? <span className='text-sm absolute font-light bg-yellow-300 text-black py-0.5 px-2 right-1 top-8 shadow-sm rounded-md md:text-lg'>On Sale</span> : ''}
         </Link>
         <div className='flex justify-between items-center px-1'>
         <div className='flex flex-col'>
         <h4 className='text-sm sm:text-base'>{item.name}</h4>
-        <p className=' text-sm sm:text-base lg:text-lg font-bold'>
-        {item.onSale ? (<span className='font-normal line-through text-gray-400 text-sm'>£ {item.price}</span>) : <span>£ {item.price}</span>}
-        {item.onSale && (<span className='text-red-500'> £ {(item.price * 0.7).toFixed(2)}</span>)}
+        <p className=' text-sm sm:text-base lg:text-lg font-light'>
+        {item.onSale && <span className=' text-gray-500 text-sm line-through pr-0.5'>£ {item.oldPrice}</span>}
+        £ {item.price}
         </p>
         </div>
         <div 
         className='cursor-pointer'
         onClick={() => {
-          if(!toggleFavorites[item.id]) {
-            dispatch(addToFavorites({
-              id: item.id,
-              title: item.name,
-              price: item.price,
-              newPrice: item.onSale ? (item.price * 0.7).toFixed(2) : '',
-              image: item.img
-            }));
-          } else {
+          if(toggleFavorites[item.id]) {
             dispatch(removeFromFavorites(item.id))
+          } else {
+            handleToggle(item.id)
+            dispatch(addToFavorites(item))
           }
-          handleToggle(item.id);
         }}
         >
         {toggleFavorites[item.id] ? (<BsHeartFill  color="black" className='text-base md:text-lg' />) : (<BsHeart  className='text-base md:text-xl'/>)}

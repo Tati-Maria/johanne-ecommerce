@@ -39,18 +39,18 @@ const Products = () => {
   return (
     <section>
         <Layout>
-            <section className='flex flex-col items-start  lg:items-start lg:flex-row gap-6 py-16'>
+            <section className='flex flex-col items-start lg:flex-row gap-6 py-16'>
             <div className='w-full md:w-[200px] flex justify-between flex-row md:flex-col gap-6 lg:sticky h-full lg:top-[50px]'>
-            <div>
+            <div className='mt-0 lg:mt-10'>
             <FormControl sx={{ m: 1, minWidth: 100 }} size="small">
                 <InputLabel>
-                Category
+                Filter
                 </InputLabel>
                 <Select
                 labelId="demo-select-small"
                 id="demo-select-small"
                 value={filterProduct}
-                label="Age"
+                label="product filter"
                 onChange={handleFilterChange}
             >
                 <MenuItem value="all">

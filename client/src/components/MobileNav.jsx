@@ -13,7 +13,7 @@ const MobileNav = ({setNav, nav}) => {
         <div 
         className={`side-bar ${nav ? 'visible' : ''}`}>
             <span id="close" className='text-red-600 text-4xl cursor-pointer block text-right pr-10 pt-10 ' onClick={closeNav} role='button'>&times;</span>
-            <ul className='flex flex-col items-end gap-10 w-full pr-10 pt-20 text-sm md:text-base'>
+            <ul className='flex flex-col items-end gap-10 w-full pr-10 pt-20 text-base'>
                 <li>
                     <NavLink to="/" onClick={closeNav}>
                     Home
