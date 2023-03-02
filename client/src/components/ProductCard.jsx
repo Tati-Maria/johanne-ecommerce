@@ -24,7 +24,7 @@ const ProductCard = ({filteredProducts}) => {
         <img 
         src={item.img} 
         alt={item.name} 
-        className="object-cover w-[200px] h-[200px] md:w-[300px] md:h-[300px] float-left lg:w-[350px] lg:h-[350px] xl:w-[400px] xl:h-[400px]" />
+        className="object-cover w-[250px] h-[250px] md:w-[300px] md:h-[300px] float-left lg:w-[350px] lg:h-[350px] xl:w-[400px] xl:h-[400px]" />
         {item.onSale ? <span className='text-sm absolute font-light bg-yellow-300 text-black py-0.5 px-2 right-1 top-8 shadow-sm rounded-md md:text-lg'>On Sale</span> : ''}
         </Link>
         <div className='flex justify-between items-center px-1'>
